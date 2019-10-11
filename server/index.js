@@ -1,16 +1,20 @@
 require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
+
 const {
-  registerApplicant,
-  loginApplicant,
-  noApplicant,
-  getApplicantSession,
-  registerEmployer,
-  loginEmployer,
-  noEmployer,
+  applicantRegister,
+  applicantLogin,
+  applicantLogout,
+  getApplicantSession
+} = require("./applicantController");
+
+const {
+  employerRegister,
+  employerLogin,
+  employerLogout,
   getEmployerSession
-} = require("./controller/authController.js");
+} = require("./employerController");
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 const app = express();
