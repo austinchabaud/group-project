@@ -1,0 +1,1 @@
+select * from employer where email = $2

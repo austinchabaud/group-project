@@ -16,3 +16,5 @@
    - fix any merge conflicts
    - git push origin [your branch name]
 4. make pull request on github & merge to master
+   <!-- to check what branch you're in -->
+   git branch -a
