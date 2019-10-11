@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 module.exports = {
-  employerregister: async (req, res) => {
+  employerRegister: async (req, res) => {
     const {
       username,
       email,
@@ -42,7 +42,7 @@ module.exports = {
       res.status(200).send(req.session.user);
     }
   },
-  employerlogin: async (req, res) => {
+  employerLogin: async (req, res) => {
     const { email, password } = req.body;
     const db = req.app.get("db");
     const foundUser = await db.Employer.find_employer_email(email);
@@ -67,11 +67,11 @@ module.exports = {
       }
     }
   },
-  employerlogout: (req, res) => {
+  employerLogout: (req, res) => {
     req.session.destroy();
     res.status(200).send("later gamer");
   },
-  getemployersession: (req, res) => {
+  getEmployerSession: (req, res) => {
     res.status(200).send(req.session.user);
   }
 };

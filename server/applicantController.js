@@ -1,6 +1,6 @@
 const bycrypt = require("bcrypt");
 module.exports = {
-  applicantregister: async (req, res) => {
+  applicantRegister: async (req, res) => {
     const {
       username,
       email,
@@ -42,7 +42,7 @@ module.exports = {
       res.status(200).send(req.session.user);
     }
   },
-  applicantlogin: async (req, res) => {
+  applicantLogin: async (req, res) => {
     const { email, password } = req.body;
     const db = req.app.get("db");
     const foundUser = await db.Applicant.find_applicant_email(email);
@@ -67,11 +67,11 @@ module.exports = {
       }
     }
   },
-  applicantlogout: (req, res) => {
+  applicantLogout: (req, res) => {
     req.session.destroy();
     res.status(200).send("later gamer");
   },
-  getapplicantsession: (req, res) => {
+  getApplicantSession: (req, res) => {
     res.status(200).send(req.session.user);
   }
 };
