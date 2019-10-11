@@ -53,3 +53,36 @@ where id = $1;
 select *from employer;
 -- ======================================================
 -- ======================================================
+-- =============================JOB POSTINGS
+create table jobs(
+    id serial primary key,
+    company text not null,
+    city text not null,
+    state text not null,
+    description text not null,
+    languages text not null
+);
+-- =======================ADD jobs
+insert into jobs(company, city, state, description, languages)
+values ($1, $2, $3, $4, $5);
+
+select * from jobs
+
+
+
+-- =========================DELETE JOBS
+
+delete from jobs
+where id = $1;
+
+select * from jobs;
+
+-- =========================UPDATE JOBS
+
+update jobs
+set company = $2, city = $3, state = $4, description = $5, languages = $6
+where id = $1;
+
+select *from employer;
+-- =================================
+
