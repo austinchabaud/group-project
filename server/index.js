@@ -1,41 +1,48 @@
 require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
+const session = require("express-session");
+const {
+	getAllApplicants,
+	addApplicants,
+	updateUsers,
+	removeUser
+} = require("./controller");
 
 const {
-  applicantRegister,
-  applicantLogin,
-  applicantLogout,
-  getApplicantSession
+	applicantRegister,
+	applicantLogin,
+	applicantLogout,
+	getApplicantSession
 } = require("./applicantController");
 
 const {
-  employerRegister,
-  employerLogin,
-  employerLogout,
-  getEmployerSession
+	employerRegister,
+	employerLogin,
+	employerLogout,
+	getEmployerSession
 } = require("./employerController");
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 const app = express();
 app.use(express.json());
 app.use(
-  session({
-    secret: SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1209600000
-    }
-  })
+	session({
+		secret: SESSION_SECRET,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			maxAge: 1209600000
+		}
+	})
 );
 
-massive(CONNECTION_STRING).then(dbInstance => {
-  app.set("db", dbInstance);
-  console.log("data connected");
+massive(CONNECTION_STRING).then((dbInstance) => {
+	app.set("db", dbInstance);
+	console.log("data connected");
 });
 
-Applicant login, logout, register
+// Applicant login, logout, register
 
 app.post("/api/applicantregister", applicantRegister);
 app.post("/api/applicantlogin", applicantLogin);
@@ -44,19 +51,19 @@ app.get("/api/applicantdata", getApplicantSession);
 
 // Applicant profile, resume, saved jobs, applied jobs
 
-app.get("/api/applicantProfile", getApplicantProfile);
-app.put("/api/applicantProfile", updateApplicantProfile);
-app.post("/api/applicantProfile", updateApplicantProfile);
-app.get("/api/applicantResume", getApplicantResume);
+app.get("/api/applicantProfile", getAllApplicants);
+app.put("/api/applicantProfile", addApplicants);
+app.post("/api/applicantProfile", updateUsers);
+app.delete("/api/applicantResume", removeUser);
 
-Employer login, logout, register
+// Employer login, logout, register
 
 app.post("/api/employerregister", employerRegister);
 app.post("/api/employerlogin", employerLogin);
 app.post("/api/employerlogout", employerLogout);
 app.get("/api/employerdata", getEmployerSession);
 
-Employer profile, posted jobs, post jobs
+// Employer profile, posted jobs, post jobs
 
 const PORT = 4000;
 app.listen(PORT, () => console.log(`server listening on port: ${PORT}.`));
