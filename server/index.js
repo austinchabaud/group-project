@@ -74,8 +74,8 @@ app.get("/api/employerdata", getEmployerSession);
 // Job posting APIS
 app.get("/api/getAllJobs", getAllJobs);
 app.post("/api/addNewJobs", addJob);
-app.put("/api/updateJobs", updateJob);
-app.delete("/api/removeJobs", removeJob);
+app.put("/api/updateJobs/:id", updateJob);
+app.delete("/api/removeJobs/:id", removeJob);
 
 const PORT = 4000;
 app.listen(PORT, () => console.log(`server listening on port: ${PORT}.`));
