@@ -1,1 +1,1 @@
-select * from job_seeker where email = $1;
+select * from job_seeker where email = $1

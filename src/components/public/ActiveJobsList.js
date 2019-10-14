@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./activejobs.scss";
 
 export default class JobListings extends Component {
 	constructor() {
@@ -15,6 +16,7 @@ export default class JobListings extends Component {
 	}
 	componentDidMount() {
 		axios.get("/api/getAllJobs").then((res) => {
+			console.log(res.data);
 			this.setState({ job: res.data });
 		});
 	}
@@ -86,7 +88,7 @@ export default class JobListings extends Component {
 
 		return (
 			<div>
-				<h1> {displayJob}</h1>
+				<h1 className="list"> {displayJob}</h1>
 			</div>
 		);
 	}
