@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setUser } from "../../../dux/reducer";
+import { setUser } from "../../../../dux/reducer";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 class AuthEmployer extends Component {
