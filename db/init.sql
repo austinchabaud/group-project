@@ -2,11 +2,12 @@
 
 drop table if exists job_seeker;
 -- ======ADD APPLICANT
-insert into job_seeker(username, email, password)
-values ($1, $2, $3);
 
-select username, password from job_seeker
-where password = $3;
+insert into job_seeker(username, email, password, name , phone, github, linkedin, city, state, portfolio, languages)
+values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);
+
+select email, username from job_seeker
+where email = $2;
 -- ================= ADD INFO
 insert into job_seeker(name, phone, github, linkedin, city, state, portfolio, languages)
 values ($4, $5, $6, $7, $8, $9, $10, $11);
