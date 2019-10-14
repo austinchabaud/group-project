@@ -1,7 +1,7 @@
-import React, { Componenet } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
-export default class CreateJob extends Componenet {
+export default class CreateJob extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -67,9 +67,9 @@ export default class CreateJob extends Componenet {
 	};
 	render() {
 		const { company, city, state, description, languages } = this.state;
-		const displayJob = this.state.job.map((posting) => {
+		const displayJob = this.state.job.map((posting, i) => {
 			return (
-				<div>
+				<div key={i}>
 					<div className="listings">
 						{posting.company}
 						<br />
@@ -84,35 +84,74 @@ export default class CreateJob extends Componenet {
 					<input
 						placeholder="company"
 						value={company}
-						onChange={(e) => this.setState({ name: e.target.value })}
+						onChange={(e) => this.setState({ company: e.target.value })}
 					/>
 					<input
 						placeholder="city"
 						value={city}
-						onChange={(e) => this.setState({ name: e.target.value })}
+						onChange={(e) => this.setState({ city: e.target.value })}
 					/>
 					<input
 						placeholder="state"
 						value={state}
-						onChange={(e) => this.setState({ name: e.target.value })}
+						onChange={(e) => this.setState({ state: e.target.value })}
 					/>
 					<input
 						placeholder="description"
 						value={description}
-						onChange={(e) => this.setState({ name: e.target.value })}
+						onChange={(e) => this.setState({ description: e.target.value })}
 					/>
 					<input
 						placeholder="languages"
 						value={languages}
-						onChange={(e) => this.setState({ name: e.target.value })}
+						onChange={(e) => this.setState({ languages: e.target.value })}
 					/>
-					<button onClick={this.addJob}> Add a Job</button>
+					<button
+						onClick={() => {
+							this.updateJob(posting.id);
+						}}
+					>
+						Update Job
+					</button>
+					<button
+						onClick={() => {
+							this.removeJob(posting.id);
+						}}
+					>
+						Filled
+					</button>
 				</div>
 			);
 		});
 
 		return (
 			<div>
+				<input
+					placeholder="company"
+					value={company}
+					onChange={(e) => this.setState({ company: e.target.value })}
+				/>
+				<input
+					placeholder="city"
+					value={city}
+					onChange={(e) => this.setState({ city: e.target.value })}
+				/>
+				<input
+					placeholder="state"
+					value={state}
+					onChange={(e) => this.setState({ state: e.target.value })}
+				/>
+				<input
+					placeholder="description"
+					value={description}
+					onChange={(e) => this.setState({ description: e.target.value })}
+				/>
+				<input
+					placeholder="languages"
+					value={languages}
+					onChange={(e) => this.setState({ languages: e.target.value })}
+				/>
+				<button onClick={this.addJob}> Add a Job</button>
 				<h1 className="list"> {displayJob}</h1>
 			</div>
 		);
