@@ -1,6 +1,7 @@
-const bycrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 module.exports = {
   applicantRegister: async (req, res) => {
+    console.log(req.body);
     const {
       username,
       email,
@@ -17,17 +18,18 @@ module.exports = {
     const db = req.app.get("db");
 
     const foundUser = await db.Applicant.find_applicant_email(email);
-
+    console.log(foundUser);
     if (foundUser.length) {
       res.status(400).send("Invalid User");
     } else {
-      const saltRounds = 13;
+      const saltRounds = 12;
       const salt = await bcrypt.genSalt(saltRounds);
       const hashedPassword = await bcrypt.hash(password, salt);
+
       const newUser = await db.Applicant.addApplicant([
+        username,
         email,
         hashedPassword,
-        username,
         name,
         phone,
         github,
@@ -36,7 +38,7 @@ module.exports = {
         state,
         portfolio,
         languages
-      ]);
+      ]).catch(err => console.log(err));
       console.log(newUser);
       req.session.user = newUser[0];
       res.status(200).send(req.session.user);
@@ -69,7 +71,7 @@ module.exports = {
   },
   applicantLogout: (req, res) => {
     req.session.destroy();
-    res.status(200).send("later gamer");
+    res.status(200).send("logged out");
   },
   getApplicantSession: (req, res) => {
     res.status(200).send(req.session.user);
