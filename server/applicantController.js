@@ -75,5 +75,6 @@ module.exports = {
   },
   getApplicantSession: (req, res) => {
     res.status(200).send(req.session.user);
+    console.log(3333333, req.session);
   }
 };

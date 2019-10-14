@@ -2,6 +2,7 @@
 
 drop table if exists job_seeker;
 -- ======ADD APPLICANT
+
 insert into job_seeker(username, email, password, name , phone, github, linkedin, city, state, portfolio, languages)
 values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);
 
