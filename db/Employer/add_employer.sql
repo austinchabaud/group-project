@@ -1,5 +1,5 @@
-insert into employer(name, email, password)
-values ($1, $2, $3);
+insert into employer(email, password, name, phone, linkedin, website, city, state)
+values ($1, $2, $3, $4, $5, $6, $7, $8);
 
-select email, password from employer
-where password = $3;
+select email from employer
+where email = $1;

@@ -1,1 +1,1 @@
-select * from employer where email = $2
+select * from employer where email = $1;

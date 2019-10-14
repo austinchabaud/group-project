@@ -30,7 +30,7 @@ module.exports = {
         website,
         city,
         state
-      ]);
+      ]).catch(err => console.log(err));
       console.log(newUser);
       req.session.user = newUser[0];
       res.status(200).send(req.session.user);
