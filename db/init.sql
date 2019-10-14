@@ -29,7 +29,7 @@ select *from job_seeker;
 -- ===========================
 -- EMPLOYER===================
 
-drop table is exists EMPLOYER
+drop table if exists EMPLOYER
 -- =======================ADD EMPLOYER
 insert into employer(name, email, password)
 values ($1, $2, $3);
