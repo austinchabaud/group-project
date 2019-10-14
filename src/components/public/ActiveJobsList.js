@@ -44,26 +44,50 @@ export default class JobListings extends Component {
 			.then((res) => this.setState({ job: res.data }));
 	};
 	updateJob = (id) => {
-		axios.put(`/api/removeJobs/${id}`, {
-			id: this.state.id,
-			company: this.state.company,
-			city: this.state.city,
-			state: this.state.state,
-			description: this.state.description,
-			languages: this.state.languages
-		}).then() => this.setState({
-			job: res.data,
-			company: "",
-			city: "",
-			state: "",
-			description: "",
-			languages: ""})
-	}
+		axios
+			.put(`/api/removeJobs/${id}`, {
+				id: this.state.id,
+				company: this.state.company,
+				city: this.state.city,
+				state: this.state.state,
+				description: this.state.description,
+				languages: this.state.languages
+			})
+			.then((res) => {
+				this.setState({
+					job: res.data,
+					company: "",
+					city: "",
+					state: "",
+					description: "",
+					languages: ""
+				});
+			});
+	};
 
-	render (){
-		const { company, city, state, description, languages} = this.state
+	render() {
 		const displayJob = this.state.job.map((posting) => {
-			
-		})
+			return (
+				<div>
+					<div className="listings">
+						{posting.company}
+						<br />
+						{posting.city}
+						<br />
+						{posting.state}
+						<br />
+						{posting.description}
+						<br />
+						{posting.languages}
+					</div>
+				</div>
+			);
+		});
+
+		return (
+			<div>
+				<h1> {displayJob}</h1>
+			</div>
+		);
 	}
 }
