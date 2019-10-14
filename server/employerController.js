@@ -2,17 +2,14 @@ const bcrypt = require("bcrypt");
 module.exports = {
   employerRegister: async (req, res) => {
     const {
-      username,
       email,
       password,
       name,
       phone,
-      github,
       linkedin,
+      website,
       city,
-      state,
-      portfolio,
-      languages
+      state
     } = req.body;
     const db = req.app.get("db");
 
@@ -27,15 +24,12 @@ module.exports = {
       const newUser = await db.Employer.add_employer([
         email,
         hashedPassword,
-        username,
         name,
         phone,
-        github,
         linkedin,
+        website,
         city,
-        state,
-        portfolio,
-        languages
+        state
       ]);
       console.log(newUser);
       req.session.user = newUser[0];
