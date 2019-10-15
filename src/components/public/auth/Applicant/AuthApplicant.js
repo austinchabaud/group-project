@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setUser } from "../../../../dux/reducer";
 import { Redirect } from "react-router-dom";
-import "./AuthApplicant.css";
+import "./AuthApplicant.scss";
 import axios from "axios";
 class AuthApplicant extends Component {
   constructor(props) {
