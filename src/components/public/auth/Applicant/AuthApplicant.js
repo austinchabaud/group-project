@@ -79,11 +79,13 @@ class AuthApplicant extends Component {
       languages
     } = this.state;
     return (
-      <div className="auth">
+      <div className="authAPP">
+        <h3>Start Looking for Jobs Today!</h3>
         {this.props.user ? (
           <Redirect to="/" />
         ) : (
           <form
+            className="appForm"
             onSubmit={e => {
               e.preventDefault();
               if (this.state.register) {
@@ -199,7 +201,7 @@ class AuthApplicant extends Component {
             <button>{register ? "Register" : "Login"}</button>
           </form>
         )}
-        <div>
+        <div className="outerApp">
           <button
             onClick={() =>
               this.setState({
@@ -209,7 +211,7 @@ class AuthApplicant extends Component {
           >
             Register
           </button>
-          Already have an account ?
+          <h3>Already have an account ?</h3>
           <button
             onClick={() => {
               this.setState({
