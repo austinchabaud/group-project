@@ -1,16 +1,7 @@
 const bcrypt = require("bcrypt");
 module.exports = {
   employerRegister: async (req, res) => {
-    const {
-      email,
-      password,
-      name,
-      phone,
-      linkedin,
-      website,
-      city,
-      state
-    } = req.body;
+    const { email, password, name, website, city, state } = req.body;
     const db = req.app.get("db");
 
     const foundUser = await db.Employer.find_employer_email(email);
@@ -25,8 +16,6 @@ module.exports = {
         email,
         hashedPassword,
         name,
-        phone,
-        linkedin,
         website,
         city,
         state

@@ -1,4 +1,4 @@
-insert into employer(phone, linkedin, website, city, state)
-values ($4, $5, $6, $7, $8);
+insert into employer(website, city, state)
+values ($6, $7, $8);
 
 select * from employer;
