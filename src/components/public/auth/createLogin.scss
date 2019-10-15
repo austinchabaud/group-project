@@ -1,0 +1,26 @@
+.login {
+	font-size: 32px;
+	align-items: center;
+	margin: 0 auto;
+	justify-content: space-evenly;
+	text-decoration: none;
+	list-style-type: none;
+	display: flex;
+
+	li {
+		margin: 70px 30px;
+		a {
+			color: green;
+		}
+	}
+}
+.background {
+	height: 100vh;
+	width: 100%;
+	background-color: purple;
+}
+.image {
+	height: 250px;
+	width: 250px;
+	align-items: center;
+}
