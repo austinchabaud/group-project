@@ -7,30 +7,30 @@ import "./App.scss";
 import { Route, Link, Switch } from "react-router-dom";
 
 function App() {
-	return (
-		<div className="App">
-			<header>
-				<div className="logo">LOGO</div>
-				<nav className="links">
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/createAccount">Create an Account!</Link>
-						</li>
-					</ul>
-				</nav>
-			</header>
+  return (
+    <div className="App">
+      <header>
+        <div className="logo">LOGO</div>
+        <nav className="links">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/createAccount">Create an Account!</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-			<Switch>
-				<Route exact path="/" component={JobListings} />
-				<Route path="/createAccount" exact component={CreateLogin} />
-				<Route path="/EmployerLogin" component={AuthEmployer} />
-				<Route path="/ApplicantLogin" component={AuthApplicant} />
-			</Switch>
-		</div>
-	);
+      <Switch>
+        <Route exact path="/" component={JobListings} />
+        <Route path="/createAccount" exact component={CreateLogin} />
+        <Route path="/EmployerLogin" component={AuthEmployer} />
+        <Route path="/ApplicantLogin" component={AuthApplicant} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

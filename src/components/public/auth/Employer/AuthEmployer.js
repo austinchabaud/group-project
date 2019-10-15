@@ -14,8 +14,6 @@ class AuthEmployer extends Component {
       username: "",
       register: true,
       name: "",
-      phone: "",
-      linkedin: "",
       website: "",
       city: "",
       state: ""
@@ -23,22 +21,11 @@ class AuthEmployer extends Component {
   }
 
   async register() {
-    const {
-      email,
-      password,
-      name,
-      phone,
-      linkedin,
-      website,
-      city,
-      state
-    } = this.state;
+    const { email, password, name, website, city, state } = this.state;
     const registeredEmployer = await axios.post("/api/employerregister", {
       email,
       password,
       name,
-      phone,
-      linkedin,
       website,
       city,
       state
@@ -61,8 +48,6 @@ class AuthEmployer extends Component {
       password,
       register,
       name,
-      phone,
-      linkedin,
       website,
       city,
       state
@@ -110,24 +95,6 @@ class AuthEmployer extends Component {
                   onChange={e =>
                     this.setState({
                       name: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="phone"
-                  value={phone}
-                  onChange={e =>
-                    this.setState({
-                      phone: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="linkedin"
-                  value={linkedin}
-                  onChange={e =>
-                    this.setState({
-                      linkedin: e.target.value
                     })
                   }
                 />
