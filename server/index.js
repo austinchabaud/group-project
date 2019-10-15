@@ -3,49 +3,50 @@ const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
 const {
-	getAllJobs,
-	addJob,
-	updateJob,
-	removeJob
+  getAllJobs,
+  addJob,
+  updateJob,
+  removeJob,
+  getJobsByEmployer
 } = require("./jobListingController");
 const {
-	getAllApplicants,
-	addApplicants,
-	updateUsers,
-	removeUser
+  getAllApplicants,
+  addApplicants,
+  updateUsers,
+  removeUser
 } = require("./controller");
 
 const {
-	applicantRegister,
-	applicantLogin,
-	applicantLogout,
-	getApplicantSession
+  applicantRegister,
+  applicantLogin,
+  applicantLogout,
+  getApplicantSession
 } = require("./applicantController");
 
 const {
-	employerRegister,
-	employerLogin,
-	employerLogout,
-	getEmployerSession
+  employerRegister,
+  employerLogin,
+  employerLogout,
+  getEmployerSession
 } = require("./employerController");
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 const app = express();
 app.use(express.json());
 app.use(
-	session({
-		secret: SESSION_SECRET,
-		resave: false,
-		saveUninitialized: false,
-		cookie: {
-			maxAge: 1209600000
-		}
-	})
+  session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1209600000
+    }
+  })
 );
 
-massive(CONNECTION_STRING).then((dbInstance) => {
-	app.set("db", dbInstance);
-	console.log("data connected");
+massive(CONNECTION_STRING).then(dbInstance => {
+  app.set("db", dbInstance);
+  console.log("data connected");
 });
 
 // Applicant login, logout, register
@@ -76,6 +77,7 @@ app.get("/api/getAllJobs", getAllJobs);
 app.post("/api/addNewJobs", addJob);
 app.put("/api/updateJobs/:id", updateJob);
 app.delete("/api/removeJobs/:id", removeJob);
+app.get("/api/getEmployerJobs", getJobsByEmployer);
 
 const PORT = 4000;
 app.listen(PORT, () => console.log(`server listening on port: ${PORT}.`));
