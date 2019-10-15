@@ -80,6 +80,8 @@ export default class JobListings extends Component {
 						{posting.description}
 						<br />
 						{posting.languages}
+						<br />
+						<button>apply</button>
 					</div>
 				</div>
 			);
