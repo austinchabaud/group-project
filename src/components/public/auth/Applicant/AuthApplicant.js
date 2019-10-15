@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setUser } from "../../../../dux/reducer";
 import { Redirect } from "react-router-dom";
-import "./AuthApplicant.css";
+import "./AuthApplicant.scss";
 import axios from "axios";
 class AuthApplicant extends Component {
   constructor(props) {
@@ -79,11 +79,13 @@ class AuthApplicant extends Component {
       languages
     } = this.state;
     return (
-      <div className="auth">
+      <div className="authAPP">
+        <h3>Start Looking for Jobs Today!</h3>
         {this.props.user ? (
           <Redirect to="/" />
         ) : (
           <form
+            className="appForm"
             onSubmit={e => {
               e.preventDefault();
               if (this.state.register) {
@@ -199,7 +201,7 @@ class AuthApplicant extends Component {
             <button>{register ? "Register" : "Login"}</button>
           </form>
         )}
-        <div>
+        <div className="outerApp">
           <button
             onClick={() =>
               this.setState({
@@ -209,7 +211,7 @@ class AuthApplicant extends Component {
           >
             Register
           </button>
-          Already have an account ?
+          <h3>Already have an account ?</h3>
           <button
             onClick={() => {
               this.setState({
