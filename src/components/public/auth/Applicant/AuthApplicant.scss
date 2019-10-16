@@ -8,13 +8,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 2rem;
     border: 0.1rem solid gray;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 10px 5px rgba(168, 168, 168, 0.2);
     border-radius: 2rem;
     height: 35rem;
-    width: 20rem;
+    width: 45rem;
     input {
       display: flex;
       align-items: center;

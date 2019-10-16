@@ -188,6 +188,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
+                  className="appLang"
                   placeholder="Languages"
                   value={languages}
                   onChange={e =>
