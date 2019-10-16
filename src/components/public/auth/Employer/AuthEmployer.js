@@ -70,7 +70,7 @@ class AuthEmployer extends Component {
             }}
           >
             <input
-              placeholder="email"
+              placeholder="Email"
               value={email}
               onChange={e =>
                 this.setState({
@@ -79,7 +79,7 @@ class AuthEmployer extends Component {
               }
             />
             <input
-              placeholder="password"
+              placeholder="Password"
               value={password}
               onChange={e =>
                 this.setState({
@@ -90,7 +90,7 @@ class AuthEmployer extends Component {
             {register && (
               <>
                 <input
-                  placeholder="name"
+                  placeholder="Name"
                   value={name}
                   onChange={e =>
                     this.setState({
@@ -99,7 +99,7 @@ class AuthEmployer extends Component {
                   }
                 />
                 <input
-                  placeholder="website"
+                  placeholder="Website"
                   value={website}
                   onChange={e =>
                     this.setState({
@@ -108,7 +108,7 @@ class AuthEmployer extends Component {
                   }
                 />
                 <input
-                  placeholder="city"
+                  placeholder="City"
                   value={city}
                   onChange={e =>
                     this.setState({
@@ -117,7 +117,7 @@ class AuthEmployer extends Component {
                   }
                 />
                 <input
-                  placeholder="state"
+                  placeholder="State"
                   value={state}
                   onChange={e =>
                     this.setState({

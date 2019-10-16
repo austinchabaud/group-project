@@ -96,7 +96,7 @@ class AuthApplicant extends Component {
             }}
           >
             <input
-              placeholder="email"
+              placeholder="Email"
               value={email}
               onChange={e =>
                 this.setState({
@@ -105,7 +105,7 @@ class AuthApplicant extends Component {
               }
             />
             <input
-              placeholder="password"
+              placeholder="Password"
               value={password}
               onChange={e =>
                 this.setState({
@@ -116,7 +116,7 @@ class AuthApplicant extends Component {
             {register && (
               <>
                 <input
-                  placeholder="username"
+                  placeholder="Username"
                   value={username}
                   onChange={e =>
                     this.setState({
@@ -125,7 +125,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="name"
+                  placeholder="Name"
                   value={name}
                   onChange={e =>
                     this.setState({
@@ -134,7 +134,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="phone"
+                  placeholder="Phone"
                   value={phone}
                   onChange={e =>
                     this.setState({
@@ -143,7 +143,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="github"
+                  placeholder="Github"
                   value={github}
                   onChange={e =>
                     this.setState({
@@ -152,7 +152,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="linkedin"
+                  placeholder="Linkedin"
                   value={linkedin}
                   onChange={e =>
                     this.setState({
@@ -161,7 +161,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="city"
+                  placeholder="City"
                   value={city}
                   onChange={e =>
                     this.setState({
@@ -170,7 +170,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="state"
+                  placeholder="State"
                   value={state}
                   onChange={e =>
                     this.setState({
@@ -179,7 +179,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="portfolio"
+                  placeholder="Portfolio"
                   value={portfolio}
                   onChange={e =>
                     this.setState({
@@ -188,7 +188,7 @@ class AuthApplicant extends Component {
                   }
                 />
                 <input
-                  placeholder="languages"
+                  placeholder="Languages"
                   value={languages}
                   onChange={e =>
                     this.setState({
