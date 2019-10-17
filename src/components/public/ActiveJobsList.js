@@ -70,6 +70,13 @@ export default class JobListings extends Component {
       });
   };
 
+  applyClick = (job_id, title) => {
+    job_id = +job_id;
+    axios.post(`/api/apply`, { job_id }).then(res => {
+      alert(`Congrats! Your application for ${title} is on its way!`);
+    });
+  };
+
   render() {
     const displayJob = this.state.job
       .filter(searching => {
@@ -87,6 +94,7 @@ export default class JobListings extends Component {
               <div className="city-state">
                 {posting.state}, {posting.city}
               </div>
+
               <br />
               <div className="description">{posting.description}</div>
 

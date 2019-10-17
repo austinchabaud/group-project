@@ -7,7 +7,9 @@ const {
   addJob,
   updateJob,
   removeJob,
-  getJobsByEmployer
+  getJobsByApplicant,
+  getJobsByEmployer,
+  apply
 } = require("./jobListingController");
 const {
   getAllApplicants,
@@ -62,6 +64,7 @@ app.get("/api/applicantProfile", getAllApplicants);
 app.put("/api/applicantProfile", addApplicants);
 app.post("/api/applicantProfile", updateUsers);
 app.delete("/api/applicantResume", removeUser);
+app.post("/api/apply", apply);
 
 // Employer login, logout, register
 
@@ -78,6 +81,7 @@ app.post("/api/addNewJobs", addJob);
 app.put("/api/updateJobs/:id", updateJob);
 app.delete("/api/removeJobs/:id", removeJob);
 app.get("/api/getEmployerJobs", getJobsByEmployer);
+app.get("/api/getMyAppliedJobs", getJobsByApplicant);
 
 const PORT = 4000;
 app.listen(PORT, () => console.log(`server listening on port: ${PORT}.`));
