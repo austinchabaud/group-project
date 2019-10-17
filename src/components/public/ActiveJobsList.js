@@ -70,6 +70,13 @@ export default class JobListings extends Component {
       });
   };
 
+  applyClick = (job_id, title) => {
+    job_id = +job_id;
+    axios.post(`/api/apply`, { job_id }).then(res => {
+      alert(`Congrats! Your application for ${title} is on its way!`);
+    });
+  };
+
   render() {
     const displayJob = this.state.job
       .filter(searching => {
@@ -81,6 +88,8 @@ export default class JobListings extends Component {
         return (
           <div key={i}>
             <div className="listings">
+              {posting.title}
+              <br />
               {posting.company}
               <br />
               {posting.city}
@@ -91,7 +100,13 @@ export default class JobListings extends Component {
               <br />
               {posting.languages}
               <br />
-              <button>apply</button>
+              <button
+                onClick={() => {
+                  this.applyClick(posting.id, posting.title);
+                }}
+              >
+                apply
+              </button>
             </div>
           </div>
         );

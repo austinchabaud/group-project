@@ -28,8 +28,24 @@ module.exports = {
   getJobsByEmployer: (req, res) => {
     const db = req.app.get("db");
     const { name } = req.session;
-    db.employer.joblisting
+    db.Employer.joblisting
       .get_jobs_by_employer(name)
       .then(jobs => res.status(200).send(jobs));
+  },
+  getJobsByApplicant: (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.session;
+    db.Applicant.get_jobs_by_applicant(id).then(jobs =>
+      res.status(200).send(jobs)
+    );
+  },
+  apply: (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.session.user;
+    const { job_id } = req.body;
+    console.log(req.session.user);
+    db.Applicant.applicant_apply([job_id, id]).then(jobs =>
+      res.status(200).send(jobs)
+    );
   }
 };
