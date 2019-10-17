@@ -74,24 +74,29 @@ export default class JobListings extends Component {
     const displayJob = this.state.job
       .filter(searching => {
         return (
-          searching.languages.toLowerCase().indexOf(this.state.search) !== -1
+          searching.languages
+            .toLowerCase()
+            .indexOf(this.state.search.toLowerCase()) !== -1
         );
       })
       .map((posting, i) => {
         return (
           <div key={i}>
             <div className="listings">
-              {posting.company}
+              <div className="company">{posting.company}</div>
+              <div className="city-state">
+                {posting.state}, {posting.city}
+              </div>
               <br />
-              {posting.city}
+              <div className="description">{posting.description}</div>
+
+              <div className="languages">
+                Skills needed: {posting.languages}
+              </div>
               <br />
-              {posting.state}
-              <br />
-              {posting.description}
-              <br />
-              {posting.languages}
-              <br />
-              <button>apply</button>
+              <div className="apply-box">
+                <button className="apply-button">Apply</button>
+              </div>
             </div>
           </div>
         );
@@ -100,11 +105,13 @@ export default class JobListings extends Component {
     return (
       <div>
         <input
+          className="search-bar"
           type="text"
+          placeholder="Search..."
           value={this.state.search}
           onChange={this.updateSearch.bind(this)}
         />
-        <h1 className="list"> {displayJob}</h1>
+        <h3 className="list"> {displayJob}</h3>
       </div>
     );
   }
