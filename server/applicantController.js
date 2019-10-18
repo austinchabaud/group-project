@@ -63,6 +63,7 @@ module.exports = {
           email: foundUser[0].email,
           username: foundUser[0].username
         };
+        console.log(4444444, req.session);
         res.status(200).send(req.session.user);
       } else {
         res.status(401).send("invalid email/password");
