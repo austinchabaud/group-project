@@ -6,6 +6,7 @@ export default class CreateJob extends Component {
 		super();
 		this.state = {
 			job: [],
+			title: "",
 			company: "",
 			city: "",
 			state: "",
@@ -22,6 +23,7 @@ export default class CreateJob extends Component {
 	addJob = () => {
 		axios
 			.post("/api/addNewJobs", {
+				title: this.state.title,
 				company: this.state.company,
 				city: this.state.city,
 				state: this.state.state,
@@ -31,6 +33,7 @@ export default class CreateJob extends Component {
 			.then((res) => {
 				this.setState({
 					job: res.data,
+					title: "",
 					company: "",
 					city: "",
 					state: "",
@@ -48,6 +51,7 @@ export default class CreateJob extends Component {
 		axios
 			.put(`/api/removeJobs/${id}`, {
 				id: this.state.id,
+				title: this.state.title,
 				company: this.state.company,
 				city: this.state.city,
 				state: this.state.state,
@@ -57,6 +61,7 @@ export default class CreateJob extends Component {
 			.then((res) => {
 				this.setState({
 					job: res.data,
+					title: "",
 					company: "",
 					city: "",
 					state: "",
@@ -66,11 +71,13 @@ export default class CreateJob extends Component {
 			});
 	};
 	render() {
-		const { company, city, state, description, languages } = this.state;
+		const { company, city, state, description, languages, title } = this.state;
 		const displayJob = this.state.job.map((posting, i) => {
 			return (
 				<div key={i}>
 					<div className="listings">
+						{posting.title}
+						<br />
 						{posting.company}
 						<br />
 						{posting.city}
@@ -82,27 +89,32 @@ export default class CreateJob extends Component {
 						{posting.languages}
 					</div>
 					<input
-						placeholder="company"
+						placeholder="Title"
+						value={title}
+						onChange={(e) => this.setState({ title: e.target.value })}
+					/>
+					<input
+						placeholder="Company"
 						value={company}
 						onChange={(e) => this.setState({ company: e.target.value })}
 					/>
 					<input
-						placeholder="city"
+						placeholder="City"
 						value={city}
 						onChange={(e) => this.setState({ city: e.target.value })}
 					/>
 					<input
-						placeholder="state"
+						placeholder="State"
 						value={state}
 						onChange={(e) => this.setState({ state: e.target.value })}
 					/>
 					<input
-						placeholder="description"
+						placeholder="Description"
 						value={description}
 						onChange={(e) => this.setState({ description: e.target.value })}
 					/>
 					<input
-						placeholder="languages"
+						placeholder="Languages"
 						value={languages}
 						onChange={(e) => this.setState({ languages: e.target.value })}
 					/>
@@ -127,27 +139,32 @@ export default class CreateJob extends Component {
 		return (
 			<div>
 				<input
-					placeholder="company"
+					placeholder="Title"
+					value={title}
+					onChange={(e) => this.setState({ title: e.target.value })}
+				/>
+				<input
+					placeholder="Company"
 					value={company}
 					onChange={(e) => this.setState({ company: e.target.value })}
 				/>
 				<input
-					placeholder="city"
+					placeholder="City"
 					value={city}
 					onChange={(e) => this.setState({ city: e.target.value })}
 				/>
 				<input
-					placeholder="state"
+					placeholder="State"
 					value={state}
 					onChange={(e) => this.setState({ state: e.target.value })}
 				/>
 				<input
-					placeholder="description"
+					placeholder="Description"
 					value={description}
 					onChange={(e) => this.setState({ description: e.target.value })}
 				/>
 				<input
-					placeholder="languages"
+					placeholder="Languages"
 					value={languages}
 					onChange={(e) => this.setState({ languages: e.target.value })}
 				/>
