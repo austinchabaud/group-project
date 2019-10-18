@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import Axios from "axios";
+import axios from "axios";
+import { Route, Switch } from "react-router-dom";
+import CreateJob from "../Jobs/CreateJob";
+import MyActiveJobs from "./MyActiveJobs";
 
 export default class CompanyProfile extends Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount() {
-    Axios.get("/api/employerdata").then(res => {
-      console.log(res.data);
-    });
-  }
+	componentDidMount() {
+		axios.get("/api/getEmployerJobs").then((res) => {
+			this.setState({ job: res.data });
+		});
+	}
 
-  render() {
-    return (
-      <div>
-        <span>Your Company Profile</span>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Switch>
+					<Route path="/EmployerProfile" component={CreateJob} />
+					<Route path="/api/getEmployerJobs" component={MyActiveJobs} />
+				</Switch>
+			</div>
+		);
+	}
 }

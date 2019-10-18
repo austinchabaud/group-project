@@ -1,5 +1,5 @@
 update jobs
-set company = $2, city = $3, state = $4, description = $5, languages = $6, title = $6
+set title = $2, company = $3, city = $4, state = $5, description = $6, languages = $7
 where id = $1;
 
-select *from employer;
+select *from jobs;

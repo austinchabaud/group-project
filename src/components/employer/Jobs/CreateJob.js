@@ -47,9 +47,10 @@ export default class CreateJob extends Component {
 			.delete(`/api/removeJobs/${id}`)
 			.then((res) => this.setState({ job: res.data }));
 	};
+
 	updateJob = (id) => {
 		axios
-			.put(`/api/removeJobs/${id}`, {
+			.put(`/api/updateJobs/${id}`, {
 				id: this.state.id,
 				title: this.state.title,
 				company: this.state.company,

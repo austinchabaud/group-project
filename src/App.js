@@ -5,6 +5,7 @@ import AuthEmployer from "./components/public/auth/Employer/AuthEmployer";
 import ProfileMyAppliedJobs from "./components/applicant/profile/ProfileMyAppliedJobs";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.scss";
+
 import { Route, Switch } from "react-router-dom";
 
 function App() {
