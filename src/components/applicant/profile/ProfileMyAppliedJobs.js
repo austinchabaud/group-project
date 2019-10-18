@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./profileMyAppliedJobs.scss";
 
 export default class MyAppliedJobs extends Component {
   constructor(props) {
@@ -11,7 +12,6 @@ export default class MyAppliedJobs extends Component {
   }
 
   componentDidMount() {
-    console.log("hey there!");
     axios.get("/api/getMyAppliedJobs").then(res => {
       console.log(res);
       this.setState({ appliedJobs: res.data });
@@ -28,9 +28,10 @@ export default class MyAppliedJobs extends Component {
       );
     });
     return (
-      <div>
-        <h3>{displayAppliedJob}</h3>
-        <div>Applied Jobs</div>
+      <div className="appliedJOBS">
+        <h2>Your Applied Jobs</h2>
+        <p>A list of all the jobs you've previously applied for.</p>
+        <div className="job">{displayAppliedJob}</div>
       </div>
     );
   }
