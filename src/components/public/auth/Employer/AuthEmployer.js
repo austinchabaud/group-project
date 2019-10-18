@@ -56,7 +56,7 @@ class AuthEmployer extends Component {
       <div className="authEMP">
         <h3>Start posting jobs</h3>
         {this.props.user ? (
-          <Redirect to="/" />
+          <Redirect to="/EmployerProfile" />
         ) : (
           <form
             className="empForm"
