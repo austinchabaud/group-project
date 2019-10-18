@@ -27,5 +27,14 @@
       cursor: pointer;
       transition: all 0.2s ease-in-out;
     }
+    .employer-profile {
+      text-transform: capitalize;
+      font-size: 1.4rem;
+      background: transparent;
+      border: transparent;
+      color: skyblue;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 }
