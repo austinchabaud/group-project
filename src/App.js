@@ -5,6 +5,7 @@ import AuthApplicant from "./components/public/auth/Applicant/AuthApplicant";
 import AuthEmployer from "./components/public/auth/Employer/AuthEmployer";
 import "./App.scss";
 import { Route, Link, Switch } from "react-router-dom";
+import MyAppliedJobs from "./components/applicant/profile/ProfileMyAppliedJobs";
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/createAccount">Create an Account!</Link>
+              <Link to="/createAccount">Create an Account</Link>
+            </li>
+            <li>
+              <Link to="/ProfileMyAppliedJobs">Applied Jobs</Link>
             </li>
           </ul>
         </nav>
@@ -28,6 +32,7 @@ function App() {
         <Route path="/createAccount" exact component={CreateLogin} />
         <Route path="/EmployerLogin" component={AuthEmployer} />
         <Route path="/ApplicantLogin" component={AuthApplicant} />
+        <Route path="/ProfileMyAppliedJobs" component={MyAppliedJobs} />
       </Switch>
     </div>
   );

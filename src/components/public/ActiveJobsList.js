@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./activejobs.scss";
+import { Link } from "react-router-dom";
 
 export default class JobListings extends Component {
   constructor() {
@@ -100,6 +101,7 @@ export default class JobListings extends Component {
               <br />
               {posting.languages}
               <br />
+
               <button
                 onClick={() => {
                   this.applyClick(posting.id, posting.title);

@@ -34,16 +34,23 @@ module.exports = {
   },
   getJobsByApplicant: (req, res) => {
     const db = req.app.get("db");
-    const { id } = req.session;
-    db.Applicant.get_jobs_by_applicant(id).then(jobs =>
-      res.status(200).send(jobs)
-    );
+    // const { id } = req.session.user;
+    // const { id } = req.session;
+    const id = 13;
+    console.log(55555, req.session);
+    db.Applicant.get_jobs_by_applicant(id)
+      .then(jobs => res.status(200).send(jobs))
+      .catch(err => {
+        console.log(err);
+      });
   },
   apply: (req, res) => {
     const db = req.app.get("db");
+    // const { id } = req.session.user;
     const { id } = req.session.user;
     const { job_id } = req.body;
-    console.log(req.session.user);
+    console.log(66666666, req.session.user.id);
+    console.log(job_id, id);
     db.Applicant.applicant_apply([job_id, id]).then(jobs =>
       res.status(200).send(jobs)
     );
