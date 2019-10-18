@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Axios from "axios";
+import axios from "axios";
 
 export default class ApplicantProfile extends Component {
   constructor(props) {
@@ -7,7 +7,7 @@ export default class ApplicantProfile extends Component {
   }
 
   componentDidMount() {
-    Axios.get("/api/applicantdata").then(res => {
+    axios.get("/api/applicantdata").then(res => {
       alert(res);
     });
   }
