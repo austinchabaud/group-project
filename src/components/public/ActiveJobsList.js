@@ -104,6 +104,7 @@ export default class JobListings extends Component {
               <br />
 
               <button
+                className="apply-button"
                 onClick={() => {
                   this.applyClick(posting.id, posting.title);
                 }}
