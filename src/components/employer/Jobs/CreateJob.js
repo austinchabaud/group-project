@@ -17,7 +17,9 @@ export default class CreateJob extends Component {
 	componentDidMount() {
 		axios.get("/api/getAllJobs").then((res) => {
 			console.log(res.data);
-			this.setState({ job: res.data });
+			this.setState({
+				job: res.data
+			});
 		});
 	}
 	addJob = () => {

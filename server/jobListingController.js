@@ -5,17 +5,17 @@ module.exports = {
 	},
 	addJob: (req, res) => {
 		const db = req.app.get("db");
-		const { company, city, state, description, languages } = req.body;
+		const { title, company, city, state, description, languages } = req.body;
 		db.Employer.joblisting
-			.addJob([company, city, state, description, languages])
+			.addJob([title, company, city, state, description, languages])
 			.then((jobs) => res.status(200).send(jobs));
 	},
 	updateJob: (req, res) => {
 		const db = req.app.get("db");
 		const { id } = req.params;
-		const { company, city, state, description, languages } = req.body;
+		const { title, company, city, state, description, languages } = req.body;
 		db.Employer.joblisting
-			.updateJobs([id, company, city, state, description, languages])
+			.updateJobs([id, title, company, city, state, description, languages])
 			.then((jobs) => res.status(200).send(jobs));
 	},
 	removeJob: (req, res) => {
