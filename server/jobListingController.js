@@ -1,4 +1,5 @@
 module.exports = {
+
 	getAllJobs: (req, res) => {
 		const db = req.app.get("db");
 		db.Employer.joblisting.allJobs().then((jobs) => res.status(200).send(jobs));
