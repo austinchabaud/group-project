@@ -72,7 +72,6 @@ export default class JobListings extends Component {
   };
 
   applyClick = (job_id, title) => {
-    job_id = +job_id;
     axios.post(`/api/apply`, { job_id }).then(res => {
       alert(`Congrats! Your application for ${title} is on its way!`);
     });
