@@ -45,6 +45,8 @@ div {
       background: skyblue;
       cursor: pointer;
       text-transform: capitalize;
+      border: transparent;
+      border-radius: 8px;
     }
   }
 }
@@ -67,65 +69,4 @@ div {
   font-size: 1.5rem;
   margin-left: 4rem;
   outline: none;
-}
-
-@media screen and (max-width: 900px) {
-  div {
-    .listings {
-      width: 20rem;
-      padding: 4rem;
-      .company {
-        font-size: 0.8rem;
-      }
-      .city-state {
-        font-size: 0.6rem;
-        align-self: flex-start;
-      }
-      .description {
-        font-size: 0.4rem;
-      }
-      .languages {
-        font-size: 0.5rem;
-      }
-      .apply-button {
-        height: 1.5rem;
-        width: 6.5rem;
-        color: white;
-        background: skyblue;
-        cursor: pointer;
-        text-transform: capitalize;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  div {
-    .listings {
-      height: 2.5rem;
-      width: 15rem;
-      padding: 3rem;
-      .company {
-        font-size: 0.8rem;
-      }
-      .city-state {
-        font-size: 0.6rem;
-        align-self: flex-start;
-      }
-      .description {
-        font-size: 0.4rem;
-      }
-      .languages {
-        font-size: 0.5rem;
-      }
-      .apply-button {
-        height: 1.5rem;
-        width: 3.5rem;
-        color: white;
-        background: skyblue;
-        cursor: pointer;
-        text-transform: capitalize;
-      }
-    }
-  }
 }
