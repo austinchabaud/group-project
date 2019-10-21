@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 
-export default class MyActiveJobs extends Component {
+class MyActiveJobs extends Component {
 	componentDidMount() {
 		axios.get("/api/getEmployerJobs").then((res) => {
 			this.setState({ job: res.data });
@@ -12,16 +12,14 @@ export default class MyActiveJobs extends Component {
 	render() {
 		return (
 			<div>
-				<span>HOLA</span>
+				<span>{this.props.user.company}</span>
 			</div>
 		);
 	}
 }
-// function mappedStatetoProps(reduxState) {
-// 	return reduxState;
-// }
-// const companyReduxConnection = connect(mappedStatetoProps);
+function mappedStatetoProps(reduxState) {
+	return reduxState;
+}
+const companyReduxConnection = connect(mappedStatetoProps);
 
-// export default companyReduxConnection(MyActiveJobs);
-
-// {this.props.user.company}
+export default companyReduxConnection(MyActiveJobs);
