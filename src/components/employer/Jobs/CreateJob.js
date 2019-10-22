@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import moment from "moment";
+
+const m = moment();
 
 export default class CreateJob extends Component {
 	constructor() {
@@ -11,7 +14,8 @@ export default class CreateJob extends Component {
 			city: "",
 			state: "",
 			description: "",
-			languages: ""
+			languages: "",
+			date_added: m.format("L")
 		};
 	}
 	componentDidMount() {
@@ -30,7 +34,8 @@ export default class CreateJob extends Component {
 				city: this.state.city,
 				state: this.state.state,
 				description: this.state.description,
-				languages: this.state.languages
+				languages: this.state.languages,
+				date_added: m.format("L")
 			})
 			.then((res) => {
 				this.setState({
@@ -90,6 +95,8 @@ export default class CreateJob extends Component {
 						{posting.description}
 						<br />
 						{posting.languages}
+						<br />
+						{posting.date_added}
 					</div>
 					<input
 						placeholder="Title"
@@ -138,7 +145,6 @@ export default class CreateJob extends Component {
 				</div>
 			);
 		});
-
 		return (
 			<div>
 				<input
