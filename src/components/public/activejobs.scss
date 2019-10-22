@@ -1,19 +1,20 @@
 div {
   .listings {
-    height: 5rem;
-    width: 40rem;
-    font-size: 20px;
+    height: 6rem;
+    width: 50rem;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
-    margin: 20px;
-    background: var(--mainWhite);
-    flex-wrap: wrap;
+    margin: 1.5rem;
+    background: white;
     border: 0.1rem solid skyblue;
     border-radius: 0.2rem;
     padding: 5rem;
     box-shadow: 4px 2px 0 rgba(168, 168, 168, 0.4);
+    .jobtitle {
+      font-size: 1.5rem;
+    }
     .company {
       align-self: flex-start;
       font-size: 1.5rem;
@@ -31,6 +32,7 @@ div {
       font-size: 0.8rem;
       align-self: baseline;
       flex-wrap: wrap;
+      align-self: center;
     }
     .apply-box {
       align-self: flex-end;
@@ -49,6 +51,7 @@ div {
       text-transform: capitalize;
       border: transparent;
       border-radius: 8px;
+      align-self: flex-end;
     }
   }
 }
