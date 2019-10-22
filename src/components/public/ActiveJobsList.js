@@ -17,7 +17,7 @@ export default class JobListings extends Component {
 			description: "",
 			languages: "",
 			title: "",
-			date_added: m.format("L"),
+			date_added: m.format("MMM Do YY"),
 			search: ""
 		};
 	}
@@ -38,7 +38,7 @@ export default class JobListings extends Component {
 				description: this.state.description,
 				languages: this.state.languages,
 				title: this.state.title,
-				date_added: m.format("L")
+				date_added: m.format("MMM Do YY")
 			})
 			.then((res) => {
 				this.setState({
@@ -48,7 +48,7 @@ export default class JobListings extends Component {
 					state: "",
 					description: "",
 					languages: "",
-					date_added: m.format("L")
+					date_added: m.format("MMM Do YY")
 				});
 			});
 	};
@@ -98,6 +98,7 @@ export default class JobListings extends Component {
 					<div key={i}>
 						<div className="listings">
 							<div className="date_added">{posting.date_added}</div>
+							<div className="date_added">{posting.title}</div>
 							<div className="company">{posting.company}</div>
 							<div className="city-state">
 								<i class="fas fa-map-marker-alt" />
