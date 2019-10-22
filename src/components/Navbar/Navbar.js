@@ -10,7 +10,10 @@ class Navbar extends Component {
       <div className="container">
         <nav className="navbar">
           <Link className="logo" to="/">
-            <h4>Website Logo</h4>
+            <h4>
+              HackerStaff
+              <i class="fas fa-laptop-code" />
+            </h4>
           </Link>
           <div className="button-container">
             <Link to="/ApplicantLogin">
