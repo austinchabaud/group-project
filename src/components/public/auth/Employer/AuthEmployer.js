@@ -79,6 +79,7 @@ class AuthEmployer extends Component {
               }
             />
             <input
+              type="password"
               placeholder="Password"
               value={password}
               onChange={e =>

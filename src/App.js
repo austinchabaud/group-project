@@ -3,6 +3,7 @@ import JobListings from "./components/public/ActiveJobsList";
 import AuthApplicant from "./components/public/auth/Applicant/AuthApplicant";
 import AuthEmployer from "./components/public/auth/Employer/AuthEmployer";
 import ProfileMyAppliedJobs from "./components/applicant/profile/ProfileMyAppliedJobs";
+import Profile from "./components/applicant/profile/Profile";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.scss";
 import CompanyProfile from "./components/employer/profile/CompanyProfile";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/ApplicantLogin" component={AuthApplicant} />
         <Route path="/AppliedJobs" component={ProfileMyAppliedJobs} />
         <Route path="/EmployerProfile" component={CompanyProfile} />
+        <Route path="/ApplicantProfile" component={Profile} />
       </Switch>
     </div>
   );
