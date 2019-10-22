@@ -7,10 +7,13 @@ import "./Navbar.scss";
 class Navbar extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <nav className="navbar">
-          <Link to="/">
-            <h4 className="logo">Website Logo</h4>
+          <Link className="logo" to="/">
+            <h4>
+              HackerStaff
+              <i class="fas fa-laptop-code" />
+            </h4>
           </Link>
           <div className="button-container">
             <Link to="/ApplicantLogin">
