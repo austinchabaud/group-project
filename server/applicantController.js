@@ -74,8 +74,12 @@ module.exports = {
     req.session.destroy();
     res.status(200).send("logged out");
   },
-  getApplicantSession: (req, res) => {
-    res.status(200).send(req.session.user);
-    console.log(3333333, req.session);
+  getApplicantSession: async (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.session.user;
+    console.log("user id", id);
+    let userInfo = await db.Applicant.applicantData(id);
+    // console.log(userInfo);
+    res.status(200).send(userInfo);
   }
 };

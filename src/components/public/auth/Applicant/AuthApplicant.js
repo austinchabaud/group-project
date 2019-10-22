@@ -82,7 +82,7 @@ class AuthApplicant extends Component {
       <div className="authAPP">
         <h3>Start Looking for Jobs Today!</h3>
         {this.props.user ? (
-          <Redirect to="/" />
+          <Redirect to="/ApplicantProfile" />
         ) : (
           <form
             className="appForm"
@@ -105,6 +105,7 @@ class AuthApplicant extends Component {
               }
             />
             <input
+              type="password"
               placeholder="Password"
               value={password}
               onChange={e =>
