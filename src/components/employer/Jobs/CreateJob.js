@@ -15,7 +15,7 @@ export default class CreateJob extends Component {
 			state: "",
 			description: "",
 			languages: "",
-			date_added: m.format("L")
+			date_added: m.format("MMM Do YY")
 		};
 	}
 	componentDidMount() {
@@ -35,7 +35,7 @@ export default class CreateJob extends Component {
 				state: this.state.state,
 				description: this.state.description,
 				languages: this.state.languages,
-				date_added: m.format("L")
+				date_added: m.format("MMM Do YY")
 			})
 			.then((res) => {
 				this.setState({
