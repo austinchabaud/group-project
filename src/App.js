@@ -10,21 +10,21 @@ import CompanyProfile from "./components/employer/profile/CompanyProfile";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
-	return (
-		<div className="App">
-			<header>
-				<Navbar />
-			</header>
+  return (
+    <div className="App">
+      <header>
+        <Navbar />
+      </header>
 
-			<Switch>
-				<Route exact path="/" component={JobListings} />
-				<Route path="/EmployerLogin" component={AuthEmployer} />
-				<Route path="/ApplicantLogin" component={AuthApplicant} />
-				<Route path="/AppliedJobs" component={ProfileMyAppliedJobs} />
-				<Route path="/EmployerProfile" component={CompanyProfile} />
-			</Switch>
-		</div>
-	);
+      <Switch>
+        <Route exact path="/" component={JobListings} />
+        <Route path="/EmployerLogin" component={AuthEmployer} />
+        <Route path="/ApplicantLogin" component={AuthApplicant} />
+        <Route path="/AppliedJobs" component={ProfileMyAppliedJobs} />
+        <Route path="/EmployerProfile" component={CompanyProfile} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

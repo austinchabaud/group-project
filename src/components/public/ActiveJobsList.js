@@ -76,7 +76,6 @@ export default class JobListings extends Component {
       alert(`Congrats! Your application for ${title} is on its way!`);
     });
   };
-
   render() {
     const displayJob = this.state.job
       .filter(searching => {
@@ -92,6 +91,7 @@ export default class JobListings extends Component {
             <div className="listings">
               <div className="company">{posting.company}</div>
               <div className="city-state">
+                <i class="fas fa-map-marker-alt" />
                 {posting.state}, {posting.city}
               </div>
 
