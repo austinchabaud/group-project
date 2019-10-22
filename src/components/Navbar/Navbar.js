@@ -19,6 +19,9 @@ class Navbar extends Component {
             <Link to="/ApplicantLogin">
               <button className="job-button">Start Applying</button>
             </Link>
+            <Link to="/ApplicantProfile">
+              <button className="job-button">Your Profile</button>
+            </Link>
             <Link to="/EmployerLogin">
               <button className="employer-button">Post a job</button>
             </Link>
