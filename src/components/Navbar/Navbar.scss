@@ -1,4 +1,9 @@
 .navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
   max-width: 100vw;
   width: 100%;
   height: 30px;
@@ -26,6 +31,7 @@
       color: skyblue;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
+      padding: 50px;
     }
     .employer-profile {
       text-transform: capitalize;
