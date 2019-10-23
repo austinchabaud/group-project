@@ -1,5 +1,7 @@
 update job_seeker
-set name = $4, phone = $5, github = $6, linkedin = $7, city = $8, state = $9, portfolio = $10, languages = $11
+set email = $2, phone = $3, github = $4, linkedin = $5, city = $6, state = $7, portfolio = $8, languages = $9
 where id = $1;
 
-select *from job_seeker;
+select *
+from job_seeker
+where id = $1;

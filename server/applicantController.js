@@ -70,6 +70,31 @@ module.exports = {
       }
     }
   },
+  updateApplicantProfile: (req, res) => {
+    const db = req.app.get("db");
+    const { id } = req.params;
+    const {
+      email,
+      phone,
+      github,
+      linkedin,
+      city,
+      state,
+      portfolio,
+      languages
+    } = req.body;
+    db.Applicant.updateUser([
+      id,
+      email,
+      phone,
+      github,
+      linkedin,
+      city,
+      state,
+      portfolio,
+      languages
+    ]).then(jobs => res.status(200).send(jobs));
+  },
   applicantLogout: (req, res) => {
     req.session.destroy();
     res.status(200).send("logged out");
