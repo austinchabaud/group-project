@@ -53,7 +53,8 @@ module.exports = {
   },
   getJobsByEmployer: (req, res) => {
     const db = req.app.get("db");
-    const { name } = req.session;
+    const { name } = req.session.user;
+    console.log(req.session);
     db.Employer.joblisting
       .get_jobs_by_employer(name)
       .then(jobs => res.status(200).send(jobs));
@@ -70,7 +71,6 @@ module.exports = {
   },
   apply: (req, res) => {
     const db = req.app.get("db");
-    // const { id } = req.session.user;
     const { id } = req.session.user;
     const { job_id } = req.body;
     console.log(66666666, req.session.user.id);

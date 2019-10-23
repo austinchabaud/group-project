@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./activejobs.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import moment from "moment";
 
 const m = moment();
