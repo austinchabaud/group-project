@@ -12,12 +12,15 @@ class Navbar extends Component {
           <Link className="logo" to="/">
             <h4>
               HackerStaff
-              <i class="fas fa-laptop-code" />
+              <i className="fas fa-laptop-code" />
             </h4>
           </Link>
           <div className="button-container">
             <Link to="/ApplicantLogin">
               <button className="job-button">Start Applying</button>
+            </Link>
+            <Link to="/ApplicantProfile">
+              <button className="job-button">Your Profile</button>
             </Link>
             <Link to="/EmployerLogin">
               <button className="employer-button">Post a job</button>
