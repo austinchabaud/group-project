@@ -12,7 +12,7 @@ class Navbar extends Component {
           <Link className="logo" to="/">
             <h4>
               HackerStaff
-              <i class="fas fa-laptop-code" />
+              <i className="fas fa-laptop-code" />
             </h4>
           </Link>
           <div className="button-container">

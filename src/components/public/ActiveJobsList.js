@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./activejobs.scss";
-import { Link } from "react-router-dom";
+
 import moment from "moment";
 
 const m = moment();
@@ -101,7 +101,7 @@ export default class JobListings extends Component {
               <div className="company">{posting.company}</div>
               <div className="date_added">{posting.date_added}</div>
               <div className="city-state">
-                <i class="fas fa-map-marker-alt" />
+                <i className="fas fa-map-marker-alt" />
                 {posting.state}, {posting.city}
               </div>
 
