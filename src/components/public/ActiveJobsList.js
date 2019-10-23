@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./activejobs.scss";
-
 import moment from "moment";
 
 const m = moment();

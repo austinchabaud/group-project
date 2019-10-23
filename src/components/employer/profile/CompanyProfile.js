@@ -5,20 +5,20 @@ import CreateJob from "../Jobs/CreateJob";
 import MyActiveJobs from "./MyActiveJobs";
 
 export default class CompanyProfile extends Component {
-	componentDidMount() {
-		axios.get("/api/getEmployerJobs").then((res) => {
-			this.setState({ job: res.data });
-		});
-	}
+  componentDidMount() {
+    axios.get("/api/getEmployerJobs").then(res => {
+      this.setState({ job: res.data });
+    });
+  }
 
-	render() {
-		return (
-			<div>
-				<Switch>
-					<Route path="/EmployerProfile" component={CreateJob} />
-					<Route path="/api/getEmployerJobs" component={MyActiveJobs} />
-				</Switch>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route path="/EmployerProfile" component={CreateJob} />
+          <Route path="/api/getEmployerJobs" component={MyActiveJobs} />
+        </Switch>
+      </div>
+    );
+  }
 }

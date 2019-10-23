@@ -1,25 +1,33 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { connect } from "react-redux";
 
-class MyActiveJobs extends Component {
-	componentDidMount() {
-		axios.get("/api/getEmployerJobs").then((res) => {
-			this.setState({ job: res.data });
-		});
-	}
+export default class MyActiveJobs extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postedJobs: []
+    };
+  }
+  componentDidMount() {
+    axios.get("/api/getEmployerJobs").then(res => {
+      this.setState({ postedJobs: res.data });
+    });
+  }
 
-	render() {
-		return (
-			<div>
-				<span>{this.props.user.company}</span>
-			</div>
-		);
-	}
+  render() {
+    const displayPostedJob = this.state.postedJobs.map((postedJob, i) => {
+      return (
+        <div key={i} className="myPostedJobs">
+          <div>{postedJob.name}</div>
+        </div>
+      );
+    });
+    return (
+      <div className="postedJobs">
+        <h2>Your Posted Jobs</h2>
+        <p>A list of all the jobs you've previously posted.</p>
+        <div className="job">{displayPostedJob}</div>
+      </div>
+    );
+  }
 }
-function mappedStatetoProps(reduxState) {
-	return reduxState;
-}
-const companyReduxConnection = connect(mappedStatetoProps);
-
-export default companyReduxConnection(MyActiveJobs);
