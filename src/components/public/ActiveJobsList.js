@@ -78,6 +78,7 @@ export default class JobListings extends Component {
 			});
 	};
 
+
 	applyClick = (job_id, title) => {
 		axios.post(`/api/apply`, { job_id }).then((res) => {
 			alert(`Congrats! Your application for ${title} is on its way!`);
@@ -122,6 +123,7 @@ export default class JobListings extends Component {
 					</div>
 				);
 			});
+
 
 		return (
 			<div>
