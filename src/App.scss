@@ -47,3 +47,15 @@
     }
   }
 }
+
+.jobposting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 10rem;
+  width: 20rem;
+  font-size: 1rem;
+  font-weight: 100;
+  border: 3px solid skyblue;
+}
