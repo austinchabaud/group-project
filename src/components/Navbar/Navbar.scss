@@ -1,48 +1,93 @@
-.container {
-  .navbar {
-    max-width: 100vw;
-    width: 100%;
-    height: 30px;
-    background: #4d4d4d;
+header {
+  height: 60px;
+  background: #4d4d4d;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+}
+.logo {
+  color: skyblue;
+}
+header > div {
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #4d4d4d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+li {
+  text-decoration: none;
+  margin-right: 2rem;
+}
+header nav ul {
+  min-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+.logoutbutton {
+  background: skyblue;
+  color: white;
+  border-radius: 0.3rem;
+}
+header > div button {
+  display: none;
+}
+.logoutbutton {
+  display: list-item;
+}
+@media screen and (max-width: 700px) {
+  header nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #4d4d4d;
+    min-height: 100vh;
+    transform: translate(300px, 0);
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .show {
+    transform: translate(0, 0);
+  }
+
+  header nav > ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
-    border-bottom: 2px solid skyblue;
-    .logo {
-      color: skyblue;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-    .button-container {
-      margin: 5rem;
-      .employer-button {
-        text-transform: capitalize;
-        font-size: 1rem;
-        background: transparent;
-        border: transparent;
-        color: white;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-      .job-button {
-        text-transform: capitalize;
-        font-size: 1rem;
-        background: transparent;
-        border: transparent;
-        color: white;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-      .employer-profile {
-        text-transform: capitalize;
-        font-size: 1rem;
-        background: transparent;
-        border: transparent;
-        color: white;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-    }
+    height: 300px;
+    padding-top: 90px;
+    min-width: 200px;
+  }
+
+  header > div button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 60px;
+    background: skyblue;
+    color: white;
+    z-index: 2;
+    display: initial;
   }
 }
