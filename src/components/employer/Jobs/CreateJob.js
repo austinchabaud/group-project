@@ -10,7 +10,6 @@ export default class CreateJob extends Component {
     this.state = {
       job: [],
       title: "",
-      company: "",
       city: "",
       state: "",
       description: "",
@@ -20,7 +19,7 @@ export default class CreateJob extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/getAllJobs").then(res => {
+    axios.get("/api/getEmployerJobs").then(res => {
       this.setState({ job: res.data });
     });
   }
@@ -28,7 +27,6 @@ export default class CreateJob extends Component {
     axios
       .post("/api/addNewJobs", {
         title: this.state.title,
-        company: this.state.company,
         city: this.state.city,
         state: this.state.state,
         description: this.state.description,
@@ -39,7 +37,6 @@ export default class CreateJob extends Component {
         this.setState({
           job: res.data,
           title: "",
-          company: "",
           city: "",
           state: "",
           description: "",
@@ -58,7 +55,6 @@ export default class CreateJob extends Component {
       .put(`/api/updateJobs/${id}`, {
         id: this.state.id,
         title: this.state.title,
-        company: this.state.company,
         city: this.state.city,
         state: this.state.state,
         description: this.state.description,
@@ -68,7 +64,6 @@ export default class CreateJob extends Component {
         this.setState({
           job: res.data,
           title: "",
-          company: "",
           city: "",
           state: "",
           description: "",
@@ -77,14 +72,12 @@ export default class CreateJob extends Component {
       });
   };
   render() {
-    const { company, city, state, description, languages, title } = this.state;
+    const { city, state, description, languages, title } = this.state;
     const displayJob = this.state.job.map((posting, i) => {
       return (
         <div key={i}>
           <div className="jobposting">
             {posting.title}
-            <br />
-            {posting.company}
             <br />
             {posting.city}
             <br />
@@ -100,11 +93,6 @@ export default class CreateJob extends Component {
             placeholder="Title"
             value={title}
             onChange={e => this.setState({ title: e.target.value })}
-          />
-          <input
-            placeholder="Company"
-            value={company}
-            onChange={e => this.setState({ company: e.target.value })}
           />
           <input
             placeholder="City"
@@ -149,11 +137,6 @@ export default class CreateJob extends Component {
           placeholder="Title"
           value={title}
           onChange={e => this.setState({ title: e.target.value })}
-        />
-        <input
-          placeholder="Company"
-          value={company}
-          onChange={e => this.setState({ company: e.target.value })}
         />
         <input
           placeholder="City"

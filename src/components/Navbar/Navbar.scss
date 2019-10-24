@@ -7,6 +7,12 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-decoration: none;
+  }
 }
 .logo {
   color: skyblue;
@@ -23,27 +29,28 @@ header > div {
   padding: 0 20px;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
 li {
   text-decoration: none;
+  margin-right: 2rem;
 }
 header nav ul {
   min-width: 400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-decoration: none;
   list-style-type: none;
 }
-
+.logoutbutton {
+  background: skyblue;
+  color: white;
+  border-radius: 0.3rem;
+}
 header > div button {
   display: none;
+}
+.logoutbutton {
+  display: list-item;
 }
 @media screen and (max-width: 700px) {
   header nav {
@@ -69,7 +76,7 @@ header > div button {
     justify-content: space-between;
     height: 300px;
     padding-top: 90px;
-    min-width: 300px;
+    min-width: 200px;
   }
 
   header > div button {
@@ -77,7 +84,7 @@ header > div button {
     top: 20px;
     right: 20px;
     height: 30px;
-    width: 50px;
+    width: 60px;
     background: skyblue;
     color: white;
     z-index: 2;
