@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { setUser } from "../../dux/reducer";
 import { connect } from "react-redux";
 import "./Navbar.scss";
-
+import axios from "axios";
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -46,20 +46,21 @@ class Navbar extends Component {
               <li>
                 <a href="#/AppliedJobs">Applied Jobs</a>
               </li>
+              <li>
+                <button
+                  className="logoutbutton"
+                  onClick={() => {
+                    axios.post("/api/applicantlogout").then(res => {
+                      alert("Logged out");
+                      this.props.setUser(null);
+                      this.props.history.push("/");
+                    });
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
             </ul>
-
-            {/* <button
-              className="logoutbutton"
-              onClick={() => {
-                axios.post("/api/applicantlogout").then(res => {
-                  alert("Logged out");
-                  this.props.setUser(null);
-                  this.props.history.push("/");
-                });
-              }}
-              >
-              Logout
-            </button> */}
           </nav>
         </div>
       </header>
