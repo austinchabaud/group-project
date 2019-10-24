@@ -94,31 +94,27 @@ export default class JobListings extends Component {
       })
       .map((posting, i) => {
         return (
-          <div key={i}>
-            <div className="listings">
-              <div className="jobtitle">{posting.title}</div>
-              <div className="company">{posting.company}</div>
-              <div className="date_added">{posting.date_added}</div>
-              <div className="city-state">
-                <i className="fas fa-map-marker-alt" />
-                {posting.state}, {posting.city}
-              </div>
-
-              <div className="description">{posting.description}</div>
-
-              <div className="languages">
-                Skills needed: {posting.languages}
-              </div>
-
-              <button
-                className="apply-button"
-                onClick={() => {
-                  this.applyClick(posting.id, posting.title);
-                }}
-              >
-                apply
-              </button>
+          <div key={i} className="listings">
+            <div className="jobtitle">{posting.title}</div>
+            <div className="company">{posting.company}</div>
+            <div className="date_added">{posting.date_added}</div>
+            <div className="city-state">
+              <i className="fas fa-map-marker-alt" />
+              {posting.state}, {posting.city}
             </div>
+
+            <div className="description">{posting.description}</div>
+
+            <div className="languages">Skills needed: {posting.languages}</div>
+
+            <button
+              className="apply-button"
+              onClick={() => {
+                this.applyClick(posting.id, posting.title);
+              }}
+            >
+              apply
+            </button>
           </div>
         );
       });
