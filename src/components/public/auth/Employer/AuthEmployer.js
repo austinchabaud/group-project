@@ -72,11 +72,7 @@ class AuthEmployer extends Component {
             <input
               placeholder="Email"
               value={email}
-              onChange={e =>
-                this.setState({
-                  email: e.target.value
-                })
-              }
+              onChange={e => this.setState({ email: e.target.value })}
             />
             <input
               type="password"
