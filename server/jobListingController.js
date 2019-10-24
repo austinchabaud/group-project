@@ -6,17 +6,10 @@ module.exports = {
   addJob: (req, res) => {
     const db = req.app.get("db");
     console.log(req.body.date);
-    const {
-      title,
-      company,
-      city,
-      state,
-      description,
-      languages,
-      date_added
-    } = req.body;
+    const { title, city, state, description, languages, date_added } = req.body;
+    const { name } = req.session.user;
     db.Employer.joblisting
-      .addJob([title, company, city, state, description, languages, date_added])
+      .addJob([title, name, city, state, description, languages, date_added])
       .then(jobs => res.status(200).send(jobs));
   },
   updateJob: (req, res) => {
@@ -31,8 +24,9 @@ module.exports = {
   removeJob: (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
+    const { name } = req.session.user;
     db.Employer.joblisting
-      .deleteJob(id)
+      .deleteJob([id, name])
       .then(jobs => res.status(200).send(jobs));
   },
   getJobsByEmployer: (req, res) => {

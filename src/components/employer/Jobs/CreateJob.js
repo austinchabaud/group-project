@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import moment from "moment";
 import "./CreateJob.scss";
+import "../../../../src/App.scss";
 const m = moment();
 
 export default class CreateJob extends Component {
@@ -77,7 +78,7 @@ export default class CreateJob extends Component {
       return (
         <div key={i}>
           <div className="jobposting">
-            {posting.title}
+            <b>{posting.title}</b>
             <br />
             {posting.city}
             <br />
