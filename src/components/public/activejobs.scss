@@ -1,59 +1,57 @@
-div {
-  .listings {
-    height: 6rem;
-    width: 50rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    margin: 1.5rem;
-    background: white;
-    border: 0.1rem solid skyblue;
-    border-radius: 0.2rem;
-    padding: 5rem;
-    box-shadow: 4px 2px 0 rgba(168, 168, 168, 0.4);
-    .jobtitle {
-      font-size: 1.5rem;
-    }
-    .company {
-      align-self: flex-start;
-      font-size: 1.3rem;
-    }
-    .city-state {
-      font-size: 1rem;
-      align-self: flex-start;
-      font-weight: 400;
-      color: rgba(255, 47, 47, 0.767);
-    }
-    .description {
-      font-size: 0.8rem;
-      align-self: center;
-    }
-    .apply-box {
-      align-self: flex-end;
-    }
-    .languages {
-      font-size: 1rem;
-      align-self: flex-end;
-      margin-left: 20px;
-    }
-    .apply-button {
-      height: 3rem;
-      width: 7rem;
-      color: white;
-      background: skyblue;
-      margin: 1rem;
-      cursor: pointer;
-      text-transform: capitalize;
-      border: transparent;
-      border-radius: 8px;
-      align-self: flex-end;
-      outline: none;
-    }
-    .apply-button:hover {
-      background: rgba(85, 125, 255, 0.808);
-      transition: all 0.5s ease-in;
-    }
+.listings {
+  height: 6rem;
+  width: 50rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1.5rem;
+  background: white;
+  border: 0.1rem solid skyblue;
+  border-radius: 0.2rem;
+  padding: 5rem;
+  box-shadow: 4px 2px 0 rgba(168, 168, 168, 0.4);
+  .jobtitle {
+    font-size: 1.5rem;
+  }
+  .company {
+    align-self: flex-start;
+    font-size: 1.3rem;
+  }
+  .city-state {
+    font-size: 1rem;
+    align-self: flex-start;
+    font-weight: 400;
+    color: rgba(255, 47, 47, 0.767);
+  }
+  .description {
+    font-size: 0.8rem;
+    align-self: center;
+  }
+  .apply-box {
+    align-self: flex-end;
+  }
+  .languages {
+    font-size: 1rem;
+    align-self: flex-end;
+    margin-left: 20px;
+  }
+  .apply-button {
+    height: 3rem;
+    width: 7rem;
+    color: white;
+    background: skyblue;
+    margin: 1rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    border: transparent;
+    border-radius: 8px;
+    align-self: flex-end;
+    outline: none;
+  }
+  .apply-button:hover {
+    background: rgba(85, 125, 255, 0.808);
+    transition: all 0.5s ease-in;
   }
 }
 .list {
@@ -75,4 +73,43 @@ div {
   font-size: 1.5rem;
   margin-left: 4rem;
   outline: none;
+}
+
+@media screen and (max-width: 700px) {
+  .listings {
+    height: 6.5rem;
+    width: 25rem;
+    padding: 4rem;
+    margin: 1rem;
+    box-shadow: 4px 2px 0 rgba(168, 168, 168, 0.4);
+    .jobtitle {
+      font-size: 1rem;
+    }
+    .company {
+      align-self: flex-start;
+      font-size: 1rem;
+    }
+    .city-state {
+      font-size: 0.7rem;
+      align-self: flex-start;
+      font-weight: 400;
+      color: rgba(255, 47, 47, 0.767);
+    }
+    .description {
+      font-size: 0.3rem;
+    }
+    .languages {
+      font-size: 0.5rem;
+      align-self: flex-end;
+      margin-left: 20px;
+      color: rgb(87, 87, 87);
+    }
+    .apply-button {
+      height: 2rem;
+      width: 5rem;
+      color: white;
+      background: skyblue;
+      margin: 1rem;
+    }
+  }
 }
