@@ -2,35 +2,54 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { setUser } from "../../dux/reducer";
 import { connect } from "react-redux";
-import axios from "axios";
 import "./Navbar.scss";
+
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggle: false
+    };
+  }
+
+  toggleSideBar = () => {
+    this.setState(prevState => {
+      return {
+        toggle: !prevState.toggle
+      };
+    });
+  };
   render() {
     return (
-      <div className="container">
-        <nav className="navbar">
+      <header>
+        <div className="container">
           <Link className="logo" to="/">
             <h4>
               HackerStaff
               <i className="fas fa-laptop-code" />
             </h4>
           </Link>
-          <div className="button-container">
-            <Link to="/ApplicantLogin">
-              <button className="job-button">Start Applying</button>
-            </Link>
-            <Link to="/ApplicantProfile">
-              <button className="job-button">Your Profile</button>
-            </Link>
-            <Link to="/EmployerLogin">
-              <button className="employer-button">Post a job</button>
-            </Link>
+          <button onClick={this.toggleSideBar}>
+            {this.state.toggle ? "X" : "Menu"}
+          </button>
+          <nav className={this.state.toggle ? "show" : ""}>
+            <ul>
+              <li>
+                <a href="#/ApplicantLogin">Start Applying</a>
+              </li>
+              <li>
+                <a href="#/ApplicantProfile">Your Profile</a>
+              </li>
+              <li>
+                <a href="#/EmployerLogin">Post a Job</a>
+              </li>
+              <li>
+                <a href="#/AppliedJobs">Applied Jobs</a>
+              </li>
+            </ul>
 
-            <Link to="/AppliedJobs">
-              <button className="job-button">Applied Jobs</button>
-            </Link>
-
-            <button
+            {/* <button
+              className="logoutbutton"
               onClick={() => {
                 axios.post("/api/applicantlogout").then(res => {
                   alert("Logged out");
@@ -38,12 +57,12 @@ class Navbar extends Component {
                   this.props.history.push("/");
                 });
               }}
-            >
+              >
               Logout
-            </button>
-          </div>
-        </nav>
-      </div>
+            </button> */}
+          </nav>
+        </div>
+      </header>
     );
   }
 }
