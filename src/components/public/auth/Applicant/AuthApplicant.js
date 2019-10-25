@@ -82,127 +82,127 @@ class AuthApplicant extends Component {
       <div className="authAPP">
         <h3>Start Looking for Jobs Today!</h3>
         {this.props.user ? (
-          <Redirect to="/ApplicantProfile" />
+          <Redirect to="/" />
         ) : (
-          <form
-            className="appForm"
-            onSubmit={e => {
-              e.preventDefault();
-              if (this.state.register) {
-                this.register();
-              } else {
-                this.login();
-              }
-            }}
-          >
-            <input
-              placeholder="Email"
-              value={email}
-              onChange={e =>
-                this.setState({
-                  email: e.target.value
-                })
-              }
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={e =>
-                this.setState({
-                  password: e.target.value
-                })
-              }
-            />
-            {register && (
-              <>
-                <input
-                  placeholder="Username"
-                  value={username}
-                  onChange={e =>
-                    this.setState({
-                      username: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="Name"
-                  value={name}
-                  onChange={e =>
-                    this.setState({
-                      name: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="Phone"
-                  value={phone}
-                  onChange={e =>
-                    this.setState({
-                      phone: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="Github"
-                  value={github}
-                  onChange={e =>
-                    this.setState({
-                      github: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="Linkedin"
-                  value={linkedin}
-                  onChange={e =>
-                    this.setState({
-                      linkedin: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="City"
-                  value={city}
-                  onChange={e =>
-                    this.setState({
-                      city: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="State"
-                  value={state}
-                  onChange={e =>
-                    this.setState({
-                      state: e.target.value
-                    })
-                  }
-                />
-                <input
-                  placeholder="Portfolio"
-                  value={portfolio}
-                  onChange={e =>
-                    this.setState({
-                      portfolio: e.target.value
-                    })
-                  }
-                />
-                <input
-                  className="appLang"
-                  placeholder="Languages"
-                  value={languages}
-                  onChange={e =>
-                    this.setState({
-                      languages: e.target.value
-                    })
-                  }
-                />
-              </>
-            )}
-            <button>{register ? "Register" : "Login"}</button>
-          </form>
-        )}
+            <form
+              className="appForm"
+              onSubmit={e => {
+                e.preventDefault();
+                if (this.state.register) {
+                  this.register();
+                } else {
+                  this.login();
+                }
+              }}
+            >
+              <input
+                placeholder="Email"
+                value={email}
+                onChange={e =>
+                  this.setState({
+                    email: e.target.value
+                  })
+                }
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={e =>
+                  this.setState({
+                    password: e.target.value
+                  })
+                }
+              />
+              {register && (
+                <>
+                  <input
+                    placeholder="Username"
+                    value={username}
+                    onChange={e =>
+                      this.setState({
+                        username: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="Name"
+                    value={name}
+                    onChange={e =>
+                      this.setState({
+                        name: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="Phone"
+                    value={phone}
+                    onChange={e =>
+                      this.setState({
+                        phone: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="Github"
+                    value={github}
+                    onChange={e =>
+                      this.setState({
+                        github: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="Linkedin"
+                    value={linkedin}
+                    onChange={e =>
+                      this.setState({
+                        linkedin: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="City"
+                    value={city}
+                    onChange={e =>
+                      this.setState({
+                        city: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="State"
+                    value={state}
+                    onChange={e =>
+                      this.setState({
+                        state: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    placeholder="Portfolio"
+                    value={portfolio}
+                    onChange={e =>
+                      this.setState({
+                        portfolio: e.target.value
+                      })
+                    }
+                  />
+                  <input
+                    className="appLang"
+                    placeholder="Languages"
+                    value={languages}
+                    onChange={e =>
+                      this.setState({
+                        languages: e.target.value
+                      })
+                    }
+                  />
+                </>
+              )}
+              <button>{register ? "Register" : "Login"}</button>
+            </form>
+          )}
         <div className="outerApp">
           <button
             onClick={() =>
